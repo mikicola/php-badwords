@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BAD WORDS</title>
 </head>
 <body>
     
@@ -18,13 +18,13 @@ stampo il testo con echo
 i . servono a concatenare
 strlen stampa la lunghezza
 */
-echo '<p>' . $text . '</p>' . 'la lunghezza del testo è: ' . strlen($text);
+echo '<p>' . $text . '</p>' . 'Il testo è composto da: ' . str_word_count($text) . ' parole, ' . strlen($text) . ' caratteri';
 
 
 // variabile per prendere la parola da sostituire. In url es. ?badword=lorem
 $replace = $_GET['badword'];
 
-echo '<p>' . str_ireplace($replace, '***', $text) . '</p>' . 'la lunghezza del testo è: ' . strlen(str_ireplace($replace, '***', $text));
+echo '<p>' . str_ireplace($replace, '***', $text) . '</p>' . 'Il testo è composto da: ' . str_word_count($text) . ' parole, ' . strlen(str_ireplace($replace, '***', $text)) . ' caratteri';
 
 ?>
 
